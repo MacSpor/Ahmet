@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orta Seviye Futbol Quizi - Maç Spor</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <style>
+        /* Quiz'e özel stil eklemeleri */
+        .quiz-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-left: 5px solid #0056b3; /* Orta seviye için mavi renk */
+            border-radius: 5px;
+        }
+        .question h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .options label:hover {
+            background-color: #eef;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            text-align: center;
+            display: none; /* Başlangıçta gizli */
+        }
+        .results h3 {
+            color: #333;
+        }
+        .correct-answer {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .wrong-answer {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html"><h1>Maç Spor</h1></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Ana Sayfa</a></li>
+                    <li><a href="../son-dakika.html">Son Dakika Haberleri</a></li>
+                    <li class="dropdown">
+                        <a href="#">Haberler <i class="arrow down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../haberler/premier-lig.html">Premier Lig</a>
+                            <a href="../haberler/serie-a.html">Serie A</a>
+                            <a href="../haberler/la-liga.html">La Liga</a>
+                            <a href="../haberler/bundesliga.html">Bundesliga</a>
+                            <a href="../haberler/ligue1.html">Ligue 1</a>
+                            <a href="../haberler/super-lig.html">Süper Lig</a>
+                            <a href="../haberler/milli-takimlar.html">Milli Takımlar</a>
+                        </div>
+                    </li>
+                    <li><a href="../transferler.html">Transfer Haberleri</a></li>
+                    <li class="dropdown">
+                        <a href="#">Quizler <i class="arrow down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="kolay.html">Kolay</a>
+                            <a href="orta.html">Orta</a>
+                            <a href="zor.html">Zor</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-content">
+            <h2>Orta Seviye Futbol Bilgi Yarışması</h2>
+            <div class="quiz-container">
+                <form id="quizForm">
+                    <!-- Soru 1 -->
+                    <div class="question">
+                        <h3>1. İlk Dünya Kupasını Kim Kazandı?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="A"> A) Brezilya</label>
+                            <label><input type="radio" name="q1" value="B"> B) Uruguay</label>
+                            <label><input type="radio" name="q1" value="C"> C) İngiltere</label>
+                            <label><input type="radio" name="q1" value="D"> D) Almanya</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 2 -->
+                    <div class="question">
+                        <h3>2. Barcelona'nın Kaç Şampiyonlar Ligi Kupası Vardır?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="A"> A) 6</label>
+                            <label><input type="radio" name="q2" value="B"> B) 7</label>
+                            <label><input type="radio" name="q2" value="C"> C) 5</label>
+                            <label><input type="radio" name="q2" value="D"> D) 4</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 3 -->
+                    <div class="question">
+                        <h3>3. Milan Skriniar, Inter'den hangi takıma transfer olmuştur?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="A"> A) PSG</label>
+                            <label><input type="radio" name="q3" value="B"> B) Inter</label>
+                            <label><input type="radio" name="q3" value="C"> C) Galatasaray</label>
+                            <label><input type="radio" name="q3" value="D"> D) Juventus</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 4 -->
+                    <div class="question">
+                        <h3>4. Drogba'nın PRİME Dönemi Hangi Yıldır?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="A"> A) 2013-14</label>
+                            <label><input type="radio" name="q4" value="B"> B) 2011-2012</label>
+                            <label><input type="radio" name="q4" value="C"> C) 2015-2016</label>
+                            <label><input type="radio" name="q4" value="D"> D) 2012-2013</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 5 -->
+                    <div class="question">
+                        <h3>5. Beşiktaş Efsanesi Demba Ba, hangi sezonda kısa süreliğine de olsa kiralık olarak oynamıştır?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="A"> A) 2015-2016</label>
+                            <label><input type="radio" name="q5" value="B"> B) 2010-2011</label>
+                            <label><input type="radio" name="q5" value="C"> C) 2016-2017</label>
+                            <label><input type="radio" name="q5" value="D"> D) 2019-2020</label>
+                        </div>
+                    </div>
+
+                    <!-- YENİ SORULAR BAŞLANGICI -->
+                    <!-- Soru 6 -->
+                    <div class="question">
+                        <h3>6. 2002 Ballon d'Or'un Sahibi Kim Olmuştur?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="A"> A) Luis Nazario de Lima (Ronaldo)</label>
+                            <label><input type="radio" name="q6" value="B"> B) Beckham</label>
+                            <label><input type="radio" name="q6" value="C"> C) Zidane</label>
+                            <label><input type="radio" name="q6" value="D"> D) Cristiano Ronaldo</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 7 -->
+                    <div class="question">
+                        <h3>7. Bayern Münih'in 'İmparator' lakaplı efsane stoperi kimdir?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="A"> A) Maldini</label>
+                            <label><input type="radio" name="q7" value="B"> B) Beckenbauer</label>
+                            <label><input type="radio" name="q7" value="C"> C) Nesta</label>
+                            <label><input type="radio" name="q7" value="D"> D) Sergio Ramos</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 8 -->
+                    <div class="question">
+                        <h3>8. Bir Barcelona Efsanesi Olan Romario Hangi senede Barcelona'da oynadı?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="A"> A) 1997-99</label>
+                            <label><input type="radio" name="q8" value="B"> B) 1989-92</label>
+                            <label><input type="radio" name="q8" value="C"> C) 1998-2001</label>
+                            <label><input type="radio" name="q8" value="D"> D) 1993-95</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Soru 9 -->
+                    <div class="question">
+                        <h3>9. Real Madrid Efsanesi olan Di Stefano Kaç Ballon d'Or Kazandı?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="A"> A) 4</label>
+                            <label><input type="radio" name="q9" value="B"> B) 3</label>
+                            <label><input type="radio" name="q9" value="C"> C) 2</label>
+                            <label><input type="radio" name="q9" value="D"> D) 1</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 10 -->
+                    <div class="question">
+                        <h3>10. (Varsayımsal Soru) PSG 2025 Yılı Şampiyonlar Ligi Finalinde Inter'i ezici bir skorla yenmiştir. Bu maçın adamı kim olmuştur?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="A"> A) Dembele</label>
+                            <label><input type="radio" name="q10" value="B"> B) Barcola</label>
+                            <label><input type="radio" name="q10" value="C"> C) Doue</label>
+                            <label><input type="radio" name="q10" value="D"> D) Donnarumma</label>
+                        </div>
+                    </div>
+                    <!-- YENİ SORULAR BİTİŞİ -->
+
+                    <button type="submit" class="submit-btn">Cevapları Kontrol Et</button>
+                </form>
+
+                <div class="results" id="quizResults">
+                    <h3>Quiz Sonuçları</h3>
+                    <p id="score"></p>
+                    <div id="answersFeedback"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Maç Spor. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        const quizForm = document.getElementById('quizForm');
+        const quizResults = document.getElementById('quizResults');
+        const scoreDisplay = document.getElementById('score');
+        const answersFeedback = document.getElementById('answersFeedback');
+
+        const correctAnswers = {
+            q1: 'B', // Uruguay
+            q2: 'C', // 5
+            q3: 'A', // PSG
+            q4: 'D', // 2012-2013
+            q5: 'C', // 2016-2017
+            q6: 'A', // Luis Nazario de Lima (Ronaldo)
+            q7: 'B', // Beckenbauer
+            q8: 'D', // 1993-95
+            q9: 'C', // 2
+            q10: 'C' // Doue
+        };
+
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            let score = 0;
+            answersFeedback.innerHTML = '';
+
+            for (const questionId in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+                const questionElement = document.querySelector(`input[name="${questionId}"]`).closest('.question');
+                const questionNumber = questionElement.querySelector('h3').textContent.split('.')[0];
+                const feedbackPara = document.createElement('p');
+
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[questionId]) {
+                        score++;
+                        feedbackPara.innerHTML = `Soru ${questionNumber}: <span style="font-weight:bold; color:green;">Doğru!</span>`;
+                        feedbackPara.className = 'correct-answer';
+                    } else {
+                        feedbackPara.innerHTML = `Soru ${questionNumber}: <span style="font-weight:bold; color:red;">Yanlış.</span> Doğru cevap: ${correctAnswers[questionId]}`;
+                        feedbackPara.className = 'wrong-answer';
+                    }
+                } else {
+                    feedbackPara.innerHTML = `Soru ${questionNumber}: <span style="font-weight:bold; color:orange;">Cevaplanmadı.</span> Doğru cevap: ${correctAnswers[questionId]}`;
+                    feedbackPara.className = 'wrong-answer';
+                }
+                answersFeedback.appendChild(feedbackPara);
+            }
+
+            scoreDisplay.textContent = `Toplam Puanınız: ${score} / ${Object.keys(correctAnswers).length}`;
+            quizResults.style.display = 'block';
+            quizResults.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

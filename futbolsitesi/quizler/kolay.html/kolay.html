@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolay Seviye Futbol Quizi - Maç Spor</title>
+    <link rel="stylesheet" href="../style.css"> 
+    <style>
+        /* Quiz'e özel stil eklemeleri */
+        .quiz-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-left: 5px solid #007bff; /* Kolay seviye için mavi renk */
+            border-radius: 5px;
+        }
+        .question h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .options label:hover {
+            background-color: #eef;
+            transform: scale(1.02);
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745; /* Kolay seviye için yeşil submit butonu */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        .results {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            text-align: center;
+            display: none; /* Başlangıçta gizli */
+        }
+        .results h3 {
+            color: #333;
+        }
+        #answersFeedback p {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        .correct-answer {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .wrong-answer {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html"><h1>Maç Spor</h1></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Ana Sayfa</a></li>
+                    <li><a href="../son-dakika.html">Son Dakika Haberleri</a></li>
+                    <li class="dropdown">
+                        <a href="#">Haberler <i class="arrow down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../haberler/premier-lig.html">Premier Lig</a>
+                            <a href="../haberler/serie-a.html">Serie A</a>
+                            <a href="../haberler/la-liga.html">La Liga</a>
+                            <a href="../haberler/bundesliga.html">Bundesliga</a>
+                            <a href="../haberler/ligue1.html">Ligue 1</a>
+                            <a href="../haberler/super-lig.html">Süper Lig</a>
+                            <a href="../haberler/milli-takimlar.html">Milli Takımlar</a>
+                        </div>
+                    </li>
+                    <li><a href="../transferler.html">Transfer Haberleri</a></li>
+                    <li class="dropdown">
+                        <a href="#">Quizler <i class="arrow down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="kolay.html">Kolay</a>
+                            <a href="orta.html">Orta</a>
+                            <a href="zor.html">Zor</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-content">
+            <h2>Kolay Seviye Futbol Bilgi Yarışması</h2>
+            <div class="quiz-container">
+                <form id="quizForm">
+                    <!-- Soru 1 -->
+                    <div class="question">
+                        <h3>1. Futbolda bir maç kaç dakika sürer?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="A"> A) 45 dakika</label>
+                            <label><input type="radio" name="q1" value="B"> B) 60 dakika</label>
+                            <label><input type="radio" name="q1" value="C"> C) 90 dakika</label>
+                            <label><input type="radio" name="q1" value="D"> D) 120 dakika</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 2 -->
+                    <div class="question">
+                        <h3>2. Dünyanın en büyük futbol organizasyonu hangisidir?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="A"> A) Şampiyonlar Ligi</label>
+                            <label><input type="radio" name="q2" value="B"> B) Dünya Kupası</label>
+                            <label><input type="radio" name="q2" value="C"> C) Avrupa Şampiyonası</label>
+                            <label><input type="radio" name="q2" value="D"> D) Copa America</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 3 -->
+                    <div class="question">
+                        <h3>3. Cristiano Ronaldo, hangi takımlarda oynamıştır?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="A"> A) Barcelona, Real Madrid</label>
+                            <label><input type="radio" name="q3" value="B"> B) Sporting CP, Manchester United, Real Madrid, Juventus, Al Nassr</label>
+                            <label><input type="radio" name="q3" value="C"> C) Inter, Milan, Chelsea</label>
+                            <label><input type="radio" name="q3" value="D"> D) PSG, Bayern Münih</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 4 -->
+                    <div class="question">
+                        <h3>4. Bir futbol takımında kaç oyuncu sahada yer alır?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="A"> A) 9</label>
+                            <label><input type="radio" name="q4" value="B"> B) 10</label>
+                            <label><input type="radio" name="q4" value="C"> C) 11</label>
+                            <label><input type="radio" name="q4" value="D"> D) 12</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 5 -->
+                    <div class="question">
+                        <h3>5. Hangi ülke, futbolun anavatanı olarak kabul edilir?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="A"> A) Brezilya</label>
+                            <label><input type="radio" name="q5" value="B"> B) İtalya</label>
+                            <label><input type="radio" name="q5" value="C"> C) İngiltere</label>
+                            <label><input type="radio" name="q5" value="D"> D) Almanya</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 6 -->
+                    <div class="question">
+                        <h3>6. Kalecinin topu elle tutabileceği alanın adı nedir?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="A"> A) Orta saha</label>
+                            <label><input type="radio" name="q6" value="B"> B) Ceza sahası</label>
+                            <label><input type="radio" name="q6" value="C"> C) Kale alanı</label>
+                            <label><input type="radio" name="q6" value="D"> D) Taç çizgisi</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 7 -->
+                    <div class="question">
+                        <h3>7. Bir oyuncunun aynı maçta 3 gol atmasına ne denir?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="A"> A) Asist</label>
+                            <label><input type="radio" name="q7" value="B"> B) Penaltı</label>
+                            <label><input type="radio" name="q7" value="C"> C) Hat-trick</label>
+                            <label><input type="radio" name="q7" value="D"> D) Frikik</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 8 -->
+                    <div class="question">
+                        <h3>8. Hangi renk kart, bir futbolcunun oyundan atıldığını gösterir?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="A"> A) Sarı kart</label>
+                            <label><input type="radio" name="q8" value="B"> B) Mavi kart</label>
+                            <label><input type="radio" name="q8" value="C"> C) Yeşil kart</label>
+                            <label><input type="radio" name="q8" value="D"> D) Kırmızı kart</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 9 -->
+                    <div class="question">
+                        <h3>9. Bir futbol maçını yöneten kişiye ne denir?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="A"> A) Antrenör</label>
+                            <label><input type="radio" name="q9" value="B"> B) Hakem</label>
+                            <label><input type="radio" name="q9" value="C"> C) Kaptan</label>
+                            <label><input type="radio" name="q9" value="D"> D) Yardımcı antrenör</label>
+                        </div>
+                    </div>
+
+                    <!-- Soru 10 -->
+                    <div class="question">
+                        <h3>10. Futbolda "korner" ne demektir?</h3>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="A"> A) Ortadan başlama vuruşu</label>
+                            <label><input type="radio" name="q10" value="B"> B) Taç atışı</label>
+                            <label><input type="radio" name="q10" value="C"> C) Kale vuruşu</label>
+                            <label><input type="radio" name="q10" value="D"> D) Köşe vuruşu</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Cevapları Kontrol Et</button>
+                </form>
+
+                <div class="results" id="quizResults">
+                    <h3>Quiz Sonuçları</h3>
+                    <p id="score"></p>
+                    <div id="answersFeedback"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Maç Spor. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        const quizForm = document.getElementById('quizForm');
+        const quizResults = document.getElementById('quizResults');
+        const scoreDisplay = document.getElementById('score');
+        const answersFeedback = document.getElementById('answersFeedback');
+
+        const correctAnswers = {
+            q1: 'C', // 90 dakika
+            q2: 'B', // Dünya Kupası
+            q3: 'B', // Sporting CP, Manchester United, Real Madrid, Juventus, Al Nassr
+            q4: 'C', // 11
+            q5: 'C', // İngiltere
+            q6: 'B', // Ceza sahası
+            q7: 'C', // Hat-trick
+            q8: 'D', // Kırmızı kart
+            q9: 'B', // Hakem
+            q10: 'D' // Köşe vuruşu
+        };
+
+        quizForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            let score = 0;
+            answersFeedback.innerHTML = '';
+
+            for (const questionId in correctAnswers) {
+                const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+                const questionElement = document.querySelector(`input[name="${questionId}"]`).closest('.question');
+                const questionNumber = questionElement.querySelector('h3').textContent.split('.')[0];
+                const feedbackPara = document.createElement('p');
+
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswers[questionId]) {
+                        score++;
+                        feedbackPara.innerHTML = `Soru ${questionNumber}: <span style="font-weight:bold; color:green;">Doğru!</span>`;
+                        feedbackPara.className = 'correct-answer';
+                    } else {
+                        feedbackPara.innerHTML = `Soru ${questionNumber}: <span style="font-weight:bold; color:red;">Yanlış.</span> Doğru cevap: ${correctAnswers[questionId]}`;
+                        feedbackPara.className = 'wrong-answer';
+                    }
+                } else {
+                    feedbackPara.innerHTML = `Soru ${questionNumber}: <span style="font-weight:bold; color:orange;">Cevaplanmadı.</span>`;
+                    feedbackPara.className = 'wrong-answer'; // Cevaplanmayanları da kırmızı yapabiliriz veya farklı stil
+                }
+                answersFeedback.appendChild(feedbackPara);
+            }
+
+            scoreDisplay.textContent = `Toplam Puanınız: ${score} / ${Object.keys(correctAnswers).length}`;
+            quizResults.style.display = 'block';
+            quizResults.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
